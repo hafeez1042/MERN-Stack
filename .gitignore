@@ -20,3 +20,4 @@ build-analyze.log
 dist/
 logs/*.log%
 public/client.js
+config.js

@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 
 const webRouter = require('./routes/web');
 const apiV1Router = require('./routes/api/v1');
-const config = require('./config');
+const config = require('../config');
 
 const app = express();
 

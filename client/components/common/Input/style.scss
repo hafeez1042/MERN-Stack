@@ -1,0 +1,8 @@
+:local(.asyncValidatingStyle) {
+  position: relative;
+  .loading-spinner {
+    position: absolute;
+    top: 7px;
+    right: 9px;
+  }
+}

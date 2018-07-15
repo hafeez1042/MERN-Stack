@@ -10,8 +10,15 @@ const register = (req, res) => {
     email: req.body.email,
     password: req.body.password,
   }).then(({ name, email }) => {
-    res.json({ name, email });
+    const user = { name, email };
+    jwt.generateJWT(user)
+      .then(accessToken => {
+        res.json({ user, accessToken });
+      }).catch(error => {
+        res.status(errorCodes.http.BAD_REQUEST).json({ message: messages.error.UNKNOWN_ERROR, error });
+      });
   }).catch(error => {
+    console.log(error);
     if (error.code === errorCodes.mongo.DUPLICATE) {
       res.status(errorCodes.http.CONFLICT).json({ message: messages.error.USER_ALREADY_EXISTS });
     } else {
@@ -26,7 +33,7 @@ const login = (req, res) => {
     bcrypt.compare(password, user.password).then(() => {
       jwt.generateJWT(user)
         .then(response => {
-          res.json({ email, name: user.name, accessToken: response });
+          res.json({ user: { email, name: user.name }, accessToken: response });
         }).catch(error => {
           res.status(errorCodes.http.BAD_REQUEST).json({ message: messages.error.UNKNOWN_ERROR, error });
         });
