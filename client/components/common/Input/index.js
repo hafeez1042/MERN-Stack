@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import Spinner from '../Spinner';
+import { Spinner } from 'Components/common';
 import { asyncValidatingStyle } from './style.scss';
 
 type Props = {

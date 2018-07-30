@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import Spinner from '../Spinner';
+import { Spinner } from 'Components/common';
 import { asyncValidatingStyle } from './style.scss';
 
 type Props = {
@@ -14,15 +14,15 @@ type Props = {
   children: React.Node,
 };
 
-export default ({input, label, fieldId, defaultValue, children, meta: {asyncValidating, touched, error}}: Props) => {
+export default ({ input, label, fieldId, defaultValue, children, meta: { asyncValidating, touched, error } }: Props) => {
   return (
     <div className={`${touched && error ? 'has-error' : ''} form-group`}>
       <label htmlFor={fieldId || ''}> {label} </label>
-      <div className={`${asyncValidating ? asyncValidatingStyle : '' } form-input`}>
+      <div className={`${asyncValidating ? asyncValidatingStyle : ''} form-input`}>
         <select {...input} id={fieldId || ''} value={input.value || defaultValue} className="form-control">
           {children}
         </select>
-        {asyncValidating && <Spinner size="small"/>}
+        {asyncValidating && <Spinner size="small" />}
         {touched && error && <span className="help-block"> {error} </span>}
         {/* {error && error.async && <span className=""> {error.message} </span>} */}
       </div>

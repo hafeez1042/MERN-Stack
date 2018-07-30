@@ -4,8 +4,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import Routes from './routes';
-import reducers from './reducers';
+import Routes from 'Client/routes';
+import reducers from 'Reducers';
 
 const composeEnhancers =
   typeof window === 'object' &&

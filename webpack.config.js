@@ -8,6 +8,17 @@ module.exports = {
     path: path.join(__dirname, '/public'),
     filename: 'client.js',
   },
+  resolve: {
+    alias: {
+      Root: path.resolve(__dirname),
+      Client: path.resolve(__dirname, 'client/'),
+      Components: path.resolve(__dirname, 'client/components/'),
+      Actions: path.resolve(__dirname, 'client/actions/'),
+      Const: path.resolve(__dirname, 'client/const/'),
+      Helpers: path.resolve(__dirname, 'client/helpers/'),
+      Reducers: path.resolve(__dirname, 'client/reducers/'),
+    },
+  },
   module: {
     rules: [
       {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { style } from './spinner.scss';
+import { style } from './style.scss';
 
 export default ({ size, overly }) => {
   let customeStyle = {};

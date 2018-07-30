@@ -1,5 +1,5 @@
 const jsonWebToken = require('jsonwebtoken');
-const config = require('../config');
+const config = require('../../config');
 
 const generateJWT = ({ email, name, _id }, maxAge) => {
   return new Promise((resolve, reject) => {
