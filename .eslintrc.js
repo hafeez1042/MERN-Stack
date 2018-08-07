@@ -7,7 +7,6 @@ module.exports = {
   },
   "extends": [
     "eslint:recommended",
-    "plugin:flowtype/recommended"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -19,7 +18,6 @@ module.exports = {
   },
   "plugins": [
     "react",
-    "flowtype"
   ],
   "rules": {
     "indent": [

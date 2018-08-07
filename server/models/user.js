@@ -34,7 +34,12 @@ const findByEmail = (email, select) => {
   return User.findOne({ email }).select(select);
 };
 
+const getById = (_id) => {
+  return User.find({ _id });
+};
+
 module.exports = {
   create,
   findByEmail,
+  getById,
 };

@@ -5,7 +5,8 @@
     ".git",
     "node_modules/**/node_modules",
     "public",
-    "client"
+    "client",
+    "sessions"
   ],
   "verbose": true,
   "execMap": {
