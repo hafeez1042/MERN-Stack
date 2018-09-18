@@ -1,4 +1,3 @@
-// @flow
 
 const createError = require('http-errors');
 const express = require('express');
@@ -22,7 +21,6 @@ mongoose.connect(env.mongoDBURL);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
 
 // Middlewares
 app.use(logger('dev'));
